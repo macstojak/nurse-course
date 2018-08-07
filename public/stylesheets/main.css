@@ -1,0 +1,39 @@
+body{
+    background-image: url("./img/index/shelves.jpg");
+     background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center; 
+    background-size: 100% auto;
+}
+.navbar-default .navbar-brand{
+	font-size: 1.5em;
+	font-family: 'Comfortaa', cursive;
+	color: #e21c5c;
+}
+.white-container {
+	background-color: rgba(255, 255, 255, 0.75);
+	z-index: 0;
+	content: "";
+  position: relative;
+  width: 80%;
+  height: 100%;
+
+}
+.text-container{
+    width: 80%;
+	color: #000;
+	opacity: 1;
+	z-index: 2;
+
+	
+}
+h1, h2, h3, h4, h5{
+    font-family: "Oxygen", sans-serif;
+}
+p{
+    font-family: "Quicksand", sans-serif;
+    font-size: 1.3em;
+}
+.navbar-right .navbar-default .navbar-nav>li>a{
+    color: white;
+}
