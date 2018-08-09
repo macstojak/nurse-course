@@ -1,5 +1,38 @@
 <% include partials/header %>
 
+    <div class="container-fluid">
+        <div class="jumbotron">
+            <h2>Sprawdź ofertę kursów i specjalizacji organizowanych w NZOZ OMNI-MED</h2>
+            <h3>NZOZ OMNI-MED Zofia Stojak zaprasza pielęgniarki, pielęgniarzy i położne do udziału w rozpoczynających się w najbliższym czasie szkoleniach:</h3>
+                <h3>Kursy specjalistyczne:</h3>
+                <ul> 
+                    <li><i class="fas fa-check"></i>  Szczepienia ochronne – 13.05.2017 o godz. 9.00 - cena 330 zł <a href="https://smk.ezdrowie.gov.pl/" class="btn btn-xs btn-primary">Zapisz się przez system SMK</a></li>
+                    <li><i class="fas fa-check"></i>  Wykonanie i interpretacja zapisu EKG – 27.05.2017 o godz. 9.00  - cena 350 zł <a href="https://smk.ezdrowie.gov.pl/" class="btn btn-xs btn-primary">Zapisz się przez system SMK</a></li>
+                </ul>
+                <h3>Specjalizacje w dziedzinie:</h3>
+                <ul>
+                    <li><i class="fas fa-check"></i>  Pielęgniarstwo pediatryczne – 27.05.2017 o godz. 9.00 <a href="https://smk.ezdrowie.gov.pl/" class="btn btn-xs btn-primary">Zapisz się przez system SMK</a></li>
+                    <li><i class="fas fa-check"></i>  Pielęgniarstwo anestezjologiczne i intensywnej opieki - wrzesień 2017 <a href="https://smk.ezdrowie.gov.pl/" class="btn btn-xs btn-primary">Zapisz się przez system SMK</a></li>
+                </ul>
+                <h4>Zajęcia odbywają się w budynku Publicznego Gimnazjum nr 7 przy ul. Stołecznej 6</h4>
+                <h4>Cena specjalizacji to 3500 zł (możliwość opłat w ratach)</h4>
+                <h3>Kursy kwalifikacyjne w dziedzinie:</h3>
+                <ul>
+                <li><i class="fas fa-check"></i>  Pielęgniarstwo anestezjologiczne i intensywnej opieki</li>
+                <li><i class="fas fa-check"></i>  Pielęgniarstwo diabetologiczne</li>
+                <li><i class="fas fa-check"></i>  Pielęgniarstwo kardiologiczne</li>
+                <li><i class="fas fa-check"></i>  Pielęgniarstwo rodzinne</li>
+                <li><i class="fas fa-check"></i>  Pielęgniarstwo internistyczne</li>
+                <li><i class="fas fa-check"></i>  Pielęgniarstwo chirurgiczne</li>
+                <li><i class="fas fa-check"></i>  Pielęgniarstwo opieki długoterminowej</li>
+                <h4>Cena kursu kwalifikacyjnego to 1000 zł (możliwość opłat w ratach)</h4>
+                </ul>
+                
+
+        </div>
+    </div>
+
+
     <div class="container white-container">
         <div class="container text-container">
         <h1>Zapraszamy do rejestrowania się na szkolenia w NZOZ OMNI-MED</h1>
@@ -24,49 +57,47 @@
                             </th>
                       
                     </tr>
-                   
-                       
                     
                 </thead>
                <tbody>
                     <tr class="">
                         <td>
-                            <form>
+                            <form action="/register" method="POST">
                             <br>
                             <p>Zostaw podstawowe dane, abyśmy mogli skontaktować się z Tobą, jeśli kurs będzie miał wyznaczony termin:</p>
                             <ul>
                                 <li>
                                     <div class="form-input">
                                         <label>Imię: </label>
-                                        <input type="text">
+                                        <input type="text" name="firstname">
                                     </div>
                                 </li>
                                 <li>
                                      <div class="form-input">
                                         <label>Nazwisko: </label>
-                                        <input type="text">
+                                        <input type="text" name="lastname">
                                     </div>
                                 </li>
                                 <li>
                                      <div class="form-input">
                                         <label>Nr telefonu: </label>
-                                        <input type="text">
+                                        <input type="text" name="phone">
                                     </div>
                                 </li>
                                 <li>
                                      <div class="form-input">
                                         <label>E-mail: </label>
-                                        <input type="text">
+                                        <input type="text" name="mail">
                                     </div>
                                 </li>
                                 <li>
                                      <div class="form-input">
                                         <label>Nr PWZ: </label>
-                                        <input type="text">
+                                        <input type="text" name="nrpwz">
                                     </div>
                                 </li>
                             </ul>
-                            <div class="btn btn-success">Przejdź do wyboru szkoleń</div>
+                            <div class="col-md-16"><button class="btn btn-success">Przejdź do wyboru szkoleń</button></div>
                             </form>
                         </td>
                         <td>
@@ -77,15 +108,15 @@
                             <hr>
                          
                             <p>Jeśli posiadasz już konto, zaloguj się i sprawdź co nowego:</p>
-                            <form id="form-center">
+                            <form action="/login" method="POST" id="form-center">
                                  <div class="form-input">
                                         <label>Login: </label>
-                                        <input type="text">
+                                        <input type="text" name="username">
                                        
                                     </div>
                                     <div class="form-input">
                                         <label>Hasło: </label>
-                                        <input type="text">
+                                        <input type="text" name="password">
                                     </div>
                                      <br>
                                 <div class="btn btn-primary">Zaloguj się</div>

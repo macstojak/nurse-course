@@ -1,5 +1,5 @@
 body{
-    width: 100%;
+   height: 100%;
     background-image: url("./img/index/shelves.jpg");
      background-repeat: no-repeat;
     background-attachment: fixed;
@@ -34,6 +34,12 @@ body{
 }
 h1, h2, h3, h4, h5{
     font-family: "Oxygen", sans-serif;
+}
+.jumbotron li {
+   font-family: "Oxygen", sans-serif; 
+   font-size: 1.4em;
+   padding: 5px;
+   
 }
 p, label{
     font-family: "Quicksand", sans-serif;
@@ -75,7 +81,8 @@ td .btn{
     text-align: center;
 }
 .navbar-default{
-    background-color: rgba(255,255,255, 0.8);
+    background-color: rgba(255, 213, 213, 0.8);
+    border-color: rgba(255, 128, 128, 0.8);
 }
 #form-center .form-input{
     margin-left: auto;
@@ -118,4 +125,11 @@ transform: scale(1.2,1.2);
 }
 .navbar-default .navbar-nav>li>a:hover.btn-register  {
     color: red; 
+}
+.jumbotron{
+    background-color: rgba(255, 225, 213, 0.8);
+}
+.fa-check{
+    font-size: 1.4em;
+    padding-right: 15px;
 }
