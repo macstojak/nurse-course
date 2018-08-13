@@ -1,0 +1,44 @@
+var mongoose = require("mongoose");
+var Course = require("./models/course");
+
+var data =
+[{type:"KS", name:"Resuscytacja krążeniowo - oddechowa",price:"350", priceverbally:"trzysta pięćdziesiąt", group:"pielęgniarki i położne", priority:"1"},{type:"KS", name:"Wykonanie i interpretacja zapisu elektrokardiograficznego",price:"350", priceverbally:"trzysta pięćdziesiąt", group:"pielęgniarki i położne", priority:"2"},{type:"KS", name:"Terapia bólu przewlekłego u dorosłych",price:"350", priceverbally:"trzysta pięćdziesiąt", group:"pielęgniarki i położne", priority:"4"},{type:"KS", name:"Szczepienia ochronne",price:"330", priceverbally:"trzysta trzydzieści", group:"pielęgniarki", priority:"3"},{type:"KS", name:"Terapia bólu ostrego u dorosłych",price:"350", priceverbally:"trzysta pięćdziesiąt", group:"pielęgniarki i położne", priority:"5"},{type:"KS", name:"Edukator w cukrzycy",price:"380", priceverbally:"trzysta osiemdziesiąt", group:"pielęgniarki i położne", priority:"6"},{type:"KS", name:"Podstawy opieki paliatywnej",price:"400", priceverbally:"czterysta", group:"pielęgniarki", priority:"7"},{type:"KS", name:"Wywiad i badanie fizykalne",price:"600", priceverbally:"sześcset", group:"pielęgniarki i położne", priority:"8"},{type:"KS", name:"Żywienie dojelitowe i pozajelitowe",price:"380", priceverbally:"trzysta osiemdziesiąt", group:"pielęgniarki", priority:"9"},{type:"KS", name:"Leczenie ran",price:"500", priceverbally:"pięćset", group:"pielęgniarki", priority:"10"},{type:"KS", name:"Wykonywanie i ocena testów skórnych",price:"380", priceverbally:"trzysta osiemdziesiąt", group:"pielęgniarki", priority:"11"},{type:"KS", name:"Wykonanie badania spirometrycznego",price:"380", priceverbally:"trzysta osiemdziesiąt", group:"pielęgniarki", priority:"12"},{type:"KS", name:"Podstawy terapii objawowej w opiece paliatywnej",price:"330", priceverbally:"trzysta trzydzieści", group:"pielęgniarki", priority:"13"},{type:"KS", name:"Pielęgnowanie pacjenta dorosłego wentylowanego mechanicznie",price:"380", priceverbally:"trzysta osiemdziesiąt", group:"pielęgniarki", priority:"14"},{type:"KS", name:"Opieka nad dziećmi i młodzieżą z cukrzycą",price:"", priceverbally:"", group:"pielęgniarki", priority:"15"},{type:"KS", name:"Opieka nad dzieckiem z chorobą nowotworową",price:"", priceverbally:"", group:"pielęgniarki", priority:"16"},{type:"KS", name:"Opieka nad pacjentem ze stomią jelitową",price:"350", priceverbally:"trzysta pięćdziesiąt", group:"pielęgniarki", priority:"17"},{type:"KS", name:"Kompresjoterapia",price:"400", priceverbally:"czterysta", group:"pielęgniarki", priority:"18"},{type:"KS", name:"Dializoterapia",price:"330", priceverbally:"trzysta trzydzieści", group:"pielęgniarki", priority:"19"},{type:"KS", name:"Komunikowanie interpersonalne w pielęgniarstwie",price:"400", priceverbally:"czterysta", group:"pielęgniarki i położne", priority:"20"},{type:"KS", name:"Rehabilitacja osób z przewlekłymi zaburzeniami psychicznymi",price:"400", priceverbally:"czterysta", group:"pielęgniarki", priority:"21"},{type:"KS", name:"Opieka nad osobami z cukrzycą stosującymi terapię ciągłego podskórnego wlewu insuliny CPWI",price:"400", priceverbally:"czterysta", group:"pielęgniarki i położne", priority:"22"},{type:"KS", name:"Opieka pielęgniarska nad chorymi dorosłymi w leczeniu systemowym nowotworów",price:"350", priceverbally:"trzysta pięćdziesiąt", group:"pielęgniarki i położne", priority:"23"},{type:"KK", name:"Pielęgniarstwo anestezjologiczne i intensywnej opieki",price:"1100", priceverbally:"tysiąc sto", group:"pielęgniarki", priority:"1"},{type:"KK", name:"Pielęgniarstwo chirurgiczne",price:"1100", priceverbally:"tysiąc sto", group:"pielęgniarki", priority:"2"},{type:"KK", name:"Pielęgniarstwo diabetologiczne",price:"1100", priceverbally:"tysiąc sto", group:"pielęgniarki", priority:"3"},{type:"KK", name:"Pielęgniarstwo geriatryczne",price:"1100", priceverbally:"tysiąc sto", group:"pielęgniarki", priority:"4"},{type:"KK", name:"Pielęgniarstwo internistyczne",price:"1100", priceverbally:"tysiąc sto", group:"pielęgniarki", priority:"5"},{type:"KK", name:"Pielęgniarstwo kardiologiczne",price:"1100", priceverbally:"tysiąc sto", group:"pielęgniarki", priority:"6"},{type:"KK", name:"Pielęgniarstwo nefrologiczne z dializoterapią",price:"1100", priceverbally:"tysiąc sto", group:"pielęgniarki", priority:"7"},{type:"KK", name:"Pielęgniarstwo neonatologiczne",price:"1100", priceverbally:"tysiąc sto", group:"pielęgniarki", priority:"8"},{type:"KK", name:"Pielęgniarstwo neurologiczne",price:"1100", priceverbally:"tysiąc sto", group:"pielęgniarki", priority:"9"},{type:"KK", name:"Pielęgniarstwo onkologiczne",price:"1100", priceverbally:"tysiąc sto", group:"pielęgniarki", priority:"10"},{type:"KK", name:"Pielęgniarstwo operacyjne",price:"1100", priceverbally:"tysiąc sto", group:"pielęgniarki", priority:"11"},{type:"KK", name:"Pielęgniarstwo opieki długoterminowej",price:"1100", priceverbally:"tysiąc sto", group:"pielęgniarki", priority:"12"},{type:"KK", name:"Pielęgniarstwo opieki paliatywnej",price:"1100", priceverbally:"tysiąc sto", group:"pielęgniarki", priority:"13"},{type:"KK", name:"Pielęgniarstwo pediatryczne",price:"1100", priceverbally:"tysiąc sto", group:"pielęgniarki", priority:"14"},{type:"KK", name:"Pielęgniarstwo psychiatryczne",price:"1100", priceverbally:"tysiąc sto", group:"pielęgniarki", priority:"15"},{type:"KK", name:"Pielęgniarstwo ratunkowe",price:"1100", priceverbally:"tysiąc sto", group:"pielęgniarki", priority:"16"},{type:"KK", name:"Pielęgniarstwo rodzinne",price:"1100", priceverbally:"tysiąc sto", group:"pielęgniarki", priority:"17"},{type:"KK", name:"Pielęgniarstwo epidemiologiczne",price:"1100", priceverbally:"tysiąc sto", group:"pielęgniarki i położne", priority:"18"}
+,{type:"S", name:"Pielęgniarstwo anestezjologiczne i intensywnej opieki",price:"3000", priceverbally:"trzy tysiące", group:"pielęgniarki", priority:"1"},{type:"S", name:"Pielęgniarstwo chirurgiczne",price:"3500", priceverbally:"trzy tysiące pięćset", group:"pielęgniarki", priority:"2"},{type:"S", name:"Pielęgniarstwo geriatryczne",price:"3500", priceverbally:"trzy tysiące pięćset", group:"pielęgniarki", priority:"3"},{type:"S", name:"Pielęgniarstwo internistyczne",price:"3500", priceverbally:"trzy tysiące pięćset", group:"pielęgniarki", priority:"4"},{type:"S", name:"Pielęgniarstwo onkologiczne",price:"3500", priceverbally:"trzy tysiące pięćset", group:"pielęgniarki", priority:"5"},{type:"S", name:"Pielęgniarstwo operacyjne",price:"3500", priceverbally:"trzy tysiące pięćset", group:"pielęgniarki", priority:"6"},{type:"S", name:"Pielęgniarstwo opieki długoterminowej",price:"3500", priceverbally:"trzy tysiące pięćset", group:"pielęgniarki", priority:"7"},{type:"S", name:"Pielęgniarstwo opieki paliatywnej",price:"3500", priceverbally:"trzy tysiące pięćset", group:"pielęgniarki", priority:"8"},{type:"S", name:"Pielęgniarstwo pediatryczne",price:"3000", priceverbally:"trzy tysiące", group:"pielęgniarki", priority:"9"},{type:"S", name:"Pielęgniarstwo psychiatryczne",price:"3500", priceverbally:"trzy tysiące pięćset", group:"pielęgniarki", priority:"10"},{type:"S", name:"Pielęgniarstwo ratunkowe",price:"3500", priceverbally:"trzy tysiące pięćset", group:"pielęgniarki", priority:"11"},{type:"S", name:"Pielęgniarstwo rodzinne",price:"3500", priceverbally:"trzy tysiące pięćset", group:"pielęgniarki", priority:"12"},{type:"S", name:"Ochrona zdrowia pracujących",price:"3500", priceverbally:"trzy tysiące pięćset", group:"pielęgniarki", priority:"13"},{type:"S", name:"Pielęgniarstwo epidemiologiczne",price:"3500", priceverbally:"trzy tysiące pięćset", group:"pielęgniarki i położne", priority:"14"},{type:"S", name:"Pielęgniarstwo neonatologiczne",price:"3500", priceverbally:"trzy tysiące pięćset", group:"pielęgniarki i położne", priority:"15"}];
+    
+function seedDB()
+{
+    Course.remove({}, function(err)
+    {
+        if(err)
+        {
+            console.log(err);
+        }else{
+                data.forEach(function(seed){
+                      var newCourse = {
+                            type: seed.type,
+                            short: seed.short,
+                            name: seed.name,
+                            price: seed.price,
+                            priceverbally: seed.priceverbally,
+                            group: seed.group,
+                            priority: seed.priority
+                        }
+                     
+                        Course.create(newCourse, function(err, course){
+                             if(err){
+                                 console.log(err);
+                             }else{
+                                    
+                                 course.save();
+                                
+                        }
+                     
+                    });
+         
+        })
+        }
+    })
+}
+
+module.exports = seedDB;
+

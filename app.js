@@ -7,7 +7,8 @@ var express     = require("express"),
     LocalStrategy = require("passport-local"),
     path = require("path"),
     User = require("./models/user"),
-    flash       = require("connect-flash");
+    flash       = require("connect-flash"),
+     seedDB      = require("./import");
     // seedDB();
   
 //routes in here VVVV    

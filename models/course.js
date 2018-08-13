@@ -6,7 +6,8 @@ var CourseSchema = new mongoose.Schema({
         name: String,
         price: String,
         priceverbally: String,
-        group: String
+        group: String,
+        priority: Number
     });
 
 module.exports = mongoose.model("Course", CourseSchema);

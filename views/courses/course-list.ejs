@@ -1,0 +1,45 @@
+<% include ../partials/header %>
+
+    <div class="container-fluid">
+        <div class="jumbotron">
+            <h2>Nadchodzące szkolenia: </h2>
+            <h3>Nie zwlekaj, zapisz sie dziś przez SMK! Jesteśmy gotowi rozpocząć następujące kursy:</h3>
+                <h3>Kursy specjalistyczne:</h3>
+                <ul> 
+                    <li><i class="fas fa-check"></i>  Szczepienia ochronne – 13.05.2017 o godz. 9.00 - cena 330 zł <a href="https://smk.ezdrowie.gov.pl/" class="btn btn-xs btn-primary">Zapisz się przez system SMK</a></li>
+                    <li><i class="fas fa-check"></i>  Wykonanie i interpretacja zapisu EKG – 27.05.2017 o godz. 9.00  - cena 350 zł <a href="https://smk.ezdrowie.gov.pl/" class="btn btn-xs btn-primary">Zapisz się przez system SMK</a></li>
+                </ul>
+                <h3>Specjalizacje w dziedzinie:</h3>
+                <ul>
+                    <li><i class="fas fa-check"></i>  Pielęgniarstwo pediatryczne – 27.05.2017 o godz. 9.00 <a href="/users/:userid/courses/:courseid" class="btn btn-xs btn-primary">Dołącz do listy chętnych</a></li>
+                    <li><i class="fas fa-check"></i>  Pielęgniarstwo anestezjologiczne i intensywnej opieki - wrzesień 2017 <a href="https://smk.ezdrowie.gov.pl/" class="btn btn-xs btn-primary">Dołącz do listy chętnych</a></li>
+                </ul>
+                <h4>Zajęcia odbywają się w budynku Publicznego Gimnazjum nr 7 przy ul. Stołecznej 6</h4>
+                <h4>Cena specjalizacji to 3500 zł (możliwość opłat w ratach)</h4>
+                <h3>Kursy kwalifikacyjne w dziedzinie:</h3>
+                <ul>
+                <li><i class="fas fa-check"></i>  Pielęgniarstwo anestezjologiczne i intensywnej opieki</li>
+                <li><i class="fas fa-check"></i>  Pielęgniarstwo opieki długoterminowej</li>
+                <h4>Cena kursu kwalifikacyjnego to 1000 zł (możliwość opłat w ratach)</h4>
+                </ul>
+                
+
+        </div>
+    </div>
+
+
+    <div class="container white-container">
+        <div class="container text-container">
+        <h1>Zapraszamy do dopisywania się na listę osób chętnych do uczestnictwa w szkoleniach NZOZ OMNI-MED</h1>
+        <p>Wybierz szkolenia, które Cię interesują (maksymalnie 5). Dzięki temu będziemy wiedzieć jakie jest zapotrzebowanie na dany kurs. Dostaniesz maila z potwierdzeniem zapisu, zrezygnować możesz w każdej chwili. Dołączysz do listy osób chętnych, a o terminie rozpoczęcia poinformujemy Cię, po uzbieraniu potrzebnej liczby osób, mailowo lub telefonicznie. </p>
+        <ul class="course-list">
+            <% courses.forEach(function(course) {%>
+               
+                 <li><span><h4><%= course.type%> - <%= course.name%> - <%= course.price%>zł</h4></span></li>
+            <% }) %>
+        </ul>
+        </div>
+    </div>
+    
+
+<% include ../partials/footer %>

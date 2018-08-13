@@ -1,0 +1,16 @@
+.active-course{
+    color: green;
+    font-size: 1.2em;
+    border: 1px solid green;
+   
+}
+.right-x{
+    padding: 5px;
+    border: 1px solid red;
+    position: absolute;
+    right: 16px;
+    color: red;
+}
+.active-course span{
+     position: relative;
+}
